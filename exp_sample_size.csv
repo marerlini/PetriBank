@@ -1,0 +1,15 @@
+Model;Metric;Mean;Std;Eps_5pct;N_Chebyshev;N_Student
+Basic;rho1;0.9996;0.0001;0.0500;1;1
+Basic;rho2;0.9990;0.0002;0.0499;1;1
+Basic;N_sys;2.0121;0.0020;0.1006;1;1
+Basic;T_dep;0.5268;0.0061;0.0263;2;1
+Basic;W_sys;1.0600;0.0123;0.0530;2;1
+Basic;Prej_pct;4.8231;0.7385;0.2412;188;42
+Basic;J;401.8000;23.2279;20.0900;27;6
+Modified;rho1;1.0000;0.0000;0.0500;1;1
+Modified;rho2;1.0000;0.0000;0.0500;1;1
+Modified;N_sys;2.0339;0.0013;0.1017;1;1
+Modified;T_dep;0.8028;0.0093;0.0401;2;1
+Modified;W_sys;1.6328;0.0190;0.0816;2;1
+Modified;Prej_pct;37.6656;1.3669;1.8833;11;3
+Modified;J;345.2500;13.8901;17.2625;13;3
