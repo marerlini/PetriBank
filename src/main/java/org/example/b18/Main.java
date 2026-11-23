@@ -13,7 +13,7 @@ public final class Main {
     }
 
     public static void main(String[] args) {
-        String mode = args.length >= 1 ? args[0].trim().toLowerCase() : "modified";
+        String mode = args.length >= 1 ? args[0].trim().toLowerCase() : "basic";
         double simulationTime = ModelParameters.SIMULATION_TIME;
 
         if (args.length >= 2) {
