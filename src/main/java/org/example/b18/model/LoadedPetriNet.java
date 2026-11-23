@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/** A PetriObj network plus stable place-code -> listP index mapping. */
 public final class LoadedPetriNet {
     private final PetriNet net;
     private final Map<String, Integer> placeIndexes;

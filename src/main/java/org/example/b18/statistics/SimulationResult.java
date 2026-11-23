@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/** Final marking snapshot and derived counters after one simulation run. */
 public final class SimulationResult {
     private final String modelName;
     private final double simulationTime;

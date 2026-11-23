@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/** Runs one PNML network with the PetriObjModelPaint simulation engine. */
 public final class SimulationRunner {
     private SimulationRunner() {
     }

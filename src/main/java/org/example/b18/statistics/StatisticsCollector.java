@@ -9,10 +9,6 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * Reads the final marking and time-integrated statistics from the PetriObj simulation
- * and formats B18 counters and performance metrics.
- */
 public final class StatisticsCollector {
 
     // Початкова кількість автомобілів у банку (Q1=2, Q2=2, I1=1, I2=1)
@@ -116,8 +112,6 @@ public final class StatisticsCollector {
         boolean isModified = result.has("QOUT") || result.has("X1") || result.has("E1");
 
         // 1. Середнє завантаження кожного касира:
-        // Оскільки під час обслуговування маркер знаходиться всередині переходу (Tl або TE),
-        // зайнятість касира визначається як 1 - D (коли D=0, касир зайнятий або заблокований).
         double util1Total = Math.max(0.0, 1.0 - result.getAverage("D1"));
         double util2Total = Math.max(0.0, 1.0 - result.getAverage("D2"));
         double util1Blocked = result.getAverage("E1");
@@ -148,7 +142,6 @@ public final class StatisticsCollector {
                 : 0.0;
 
         // 6. Відсоток клієнтів, яким відмовлено в обслуговуванні
-        // На момент завершення моделі у кожному вікні, де D == 0, обслуговується 1 клієнт
         int busyWindowsAtEnd = (result.get("D1") == 0 ? 1 : 0) + (result.get("D2") == 0 ? 1 : 0);
         int finalInSystem = result.get("Q1") + result.get("Q2")
                 + busyWindowsAtEnd

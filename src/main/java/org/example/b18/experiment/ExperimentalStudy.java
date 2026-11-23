@@ -90,7 +90,7 @@ public final class ExperimentalStudy {
     }
 
     /**
-     * Етап 1 (4.1): Дослідження перехідного періоду та збіжності оцінок при зростанні T_mod.
+     * (4.1): Дослідження перехідного періоду та збіжності оцінок при зростанні T_mod.
      */
     private static void runTransientAnalysis() throws Exception {
         double[] horizons = {100.0, 250.0, 500.0, 1000.0, 2000.0, 5000.0, 10000.0};
@@ -134,7 +134,7 @@ public final class ExperimentalStudy {
     }
 
     /**
-     * Етап 2 (4.1): Розрахунок необхідної кількості повторів за Чебишевим (gamma=0.95, delta=5%)
+     * (4.1): Розрахунок необхідної кількості повторів за Чебишевим (gamma=0.95, delta=5%)
      * та критерієм Стьюдента за пілотною вибіркою.
      */
     private static void runSampleSizeEstimation(double tMod, int pilotRuns) throws Exception {
@@ -189,7 +189,7 @@ public final class ExperimentalStudy {
     }
 
     /**
-     * Етап 3 (4.2 та 4.3): Повна серія прогонів для базової та модифікованої моделей
+     * (4.2 та 4.3): Повна серія прогонів для базової та модифікованої моделей
      * і формування зведеної порівняльної таблиці.
      */
     private static void runMainComparisonExperiment(double tMod, int replications) throws Exception {

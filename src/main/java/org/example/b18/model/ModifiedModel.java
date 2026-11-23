@@ -4,7 +4,6 @@ import org.example.b18.config.ModelParameters;
 
 import java.io.InputStream;
 
-/** Loader for the user's second (modified) B18 PNML scheme. */
 public final class ModifiedModel {
     private ModifiedModel() {
     }

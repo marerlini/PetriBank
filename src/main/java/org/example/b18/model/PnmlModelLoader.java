@@ -23,10 +23,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Reads the PNML exported by PetriObjModelPaint and creates the corresponding
- * PetriObj library objects. Normal and informational input arcs are preserved.
- */
 public final class PnmlModelLoader {
     private static final Pattern PLACE_CODE_AT_END = Pattern.compile("([A-Za-z][A-Za-z0-9_]*|E[0-9]+)$");
 
@@ -77,8 +73,7 @@ public final class PnmlModelLoader {
             placeById.put(id, place);
         }
 
-        // Transitions. Values missing from PNML are left at library defaults:
-        // priority = 0 and activation probability = 1.0.
+        // Transitions.
         for (Element element : transitionElements) {
             String id = requiredAttribute(element, "id");
             String label = childText(element, "name");
@@ -124,9 +119,7 @@ public final class PnmlModelLoader {
             ordinaryInputCountByTransition.put(id, 0);
         }
 
-        // Arcs. A PNML arc from place to transition is ArcIn; from transition
-        // to place is ArcOut. PetriObjModelPaint stores informational input arcs
-        // with <informational>true</informational> in the tool-specific section.
+        // Arcs
         for (Element element : arcElements) {
             String source = requiredAttribute(element, "source");
             String target = requiredAttribute(element, "target");
@@ -157,8 +150,6 @@ public final class PnmlModelLoader {
             }
         }
 
-        // The course algorithm requires at least one ordinary input arc for
-        // every transition that has an informational input arc.
         for (Element element : transitionElements) {
             String transitionId = element.getAttribute("id");
             boolean hasInformationalInput = false;
@@ -177,8 +168,6 @@ public final class PnmlModelLoader {
 
         PetriNet net = new PetriNet(netName, places, transitions, inputArcs, outputArcs);
 
-        // Reset auto-generated element counters after this net has been built,
-        // as demonstrated in the PetriObj library examples.
         PetriP.initNext();
         PetriT.initNext();
         ArcIn.initNext();
